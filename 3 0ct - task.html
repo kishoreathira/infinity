@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>let workers = [
+        {
+            name: "Bharath",
+            role: "Software developer",
+            employeeId: 111,
+            place: "Tirupur",
+            currentLocationInchennai: true,
+            eductaionalQualifications: [
+                {
+                    grade: "10th",
+                    marksInPercentage: 70,
+                    monthPassedOUt : 3,
+                    yearPassedOut: "2016-2017"
+                },
+                {
+                    grade: "12th",
+                    marksInPercentage: 50,
+                    monthPassedOUt : 3,
+                    yearPassedOut: "2018-2019"
+                },
+                {
+                    grade: "UG",
+                    marksInPercentage: 80,
+                    monthPassedOUt : 7,
+                    yearPassedOut: "2019-2022"
+                }
+            ]
+        },
+        {
+            name: "Sathish",
+            role: "Software developer",
+            employeeId: 113,
+            place: "Tirupur",
+            currentLocationInchennai: false,
+            eductaionalQualifications: [
+                {
+                    grade: "10th",
+                    marksInPercentage: 40,
+                     monthPassedOUt : 3,
+                    yearPassedOut: "2016-2017"
+                },
+                {
+                    grade: "12th",
+                    marksInPercentage: 60,
+                     monthPassedOUt : 3,
+                    yearPassedOut: "2018-2019"
+                },
+                {
+                    grade: "UG",
+                    marksInPercentage: 90,
+                     monthPassedOUt : 4,
+                    yearPassedOut: "2019-2022"
+                }
+            ]
+        },
+        {
+            name: "Nandha",
+            role: "Software developer",
+            employeeId: 114,
+            place: "Tirupur",
+            currentLocationInchennai: true,
+            eductaionalQualifications: [
+                {
+                    grade: "10th",
+                    marksInPercentage: 50,
+                     monthPassedOUt : 3,
+                    yearPassedOut: "2016-2017"
+                },
+                {
+                    grade: "12th",
+                    marksInPercentage: 70,
+                     monthPassedOUt : 3,
+                    yearPassedOut: "2018-2019"
+                },
+                {
+                    grade: "UG",
+                    marksInPercentage: 80,
+                     monthPassedOUt : 4,
+                    yearPassedOut: "2019-2022"
+                }
+            ]
+        },
+        {
+            name: "Siva kumar",
+            role: "Tester",
+            employeeId: 115,
+            place: "Chennai",
+            currentLocationInchennai: true,
+            eductaionalQualifications: [
+                {
+                    grade: "10th",
+                    marksInPercentage: 60,
+                     monthPassedOUt : 3,
+                    yearPassedOut: "2009-2010"
+                },
+                {
+                    grade: "12th",
+                    marksInPercentage: 70,
+                     monthPassedOUt : 3,
+                    yearPassedOut: "2011-2012"
+                },
+                {
+                    grade: "UG",
+                    marksInPercentage: 90,
+                     monthPassedOUt : 4,
+                    yearPassedOut: "2012-2015"
+                },
+                {
+                    grade: "PG",
+                    marksInPercentage: 80,
+                     monthPassedOUt : 4,
+                    yearPassedOut: "2015-2017"
+                }
+            ]
+        },
+        {
+            name: "Selvam",
+            role: "Devops",
+            employeeId: 116,
+            place: "Chennai",
+            currentLocationInchennai: false,
+            eductaionalQualifications: [
+                {
+                    grade: "10th",
+                    marksInPercentage: 60,
+                     monthPassedOUt : 3,
+                    yearPassedOut: "1996-1997"
+                },
+                {
+                    grade: "12th",
+                    marksInPercentage: 50,
+                     monthPassedOUt : 3,
+                    yearPassedOut: "1998-1999"
+                },
+                {
+                    grade: "UG",
+                    marksInPercentage: 80,
+                     monthPassedOUt : 4,
+                    yearPassedOut: "1999-2002"
+                },
+                {
+                    grade: "PG",
+                    marksInPercentage: 70,
+                     monthPassedOUt : 4,
+                    yearPassedOut: "2002-2004"
+                }
+            ]
+        }
+    ];
+    console.log(workers);
+
+    // Get Months
+    let mntexp = workers.map(function(k){
+        return new Date().getMonth()+1 - k.eductaionalQualifications[k.eductaionalQualifications.length-1].monthPassedOUt
+     })
+     console.log(mntexp);
+
+     // Get Year Experions
+     let yerexp = workers.map((k)=>{
+        return new Date().getFullYear() - k.eductaionalQualifications[k.eductaionalQualifications.length-1].yearPassedOut.split("-")[
+            k.eductaionalQualifications[k.eductaionalQualifications.length-1].yearPassedOut.split("-").length-1]
+     })
+     console.log(yerexp);
+    
+     
+
+     for(let i=0; i<yerexp.length; i++){
+           console.log(yerexp[i]+ "YearExperions" +"  " + mntexp[i] + "MonthExperions");
+     }
+
+
+
+
+
+     let id = players.map(function (e) {
+            return e.playerid
+        })
+        console.log(id)
+        
+        let play = console.log(players[0].game.replace("cricket", "football"))
+
+
+        
+     
+     </script>
+</body>
+</html>
