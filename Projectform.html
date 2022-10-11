@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightseagreen;
+        }
+
+        #form {
+            background-color: white;
+            display: flex;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-top: 17px;
+            height: 615px;
+            width: 1050px;
+        }
+
+
+        .flex {
+            display: flex;
+        }
+
+        .flex input {
+            margin-left: 250px;
+            height: 20px;
+            margin-top: 15px;
+        }
+
+        img {
+            height: 615px;
+            width: 500px;
+        }
+
+        #reg {
+            background-color: #f4f4f4;
+            margin-left: -80px;
+            width: 750px;
+            align-items: center;
+            height: 615px;
+
+        }
+
+        .div {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        label {
+            color: gray;
+        }
+
+        #lab {
+            color: gray;
+        }
+
+        span {
+            color: #5f9fd9;
+            font-weight: 600;
+        }
+
+        button {
+            background-color: #0171fc;
+            color: white;
+            margin-left: 200px;
+            margin-top: 40px;
+            border: none;
+            padding: 6px;
+            width: 150px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #already {
+            margin-left: 150px;
+        }
+
+        #ln {
+            margin-left: 40px;
+        }
+
+        #pas {
+            margin-left: 42px;
+        }
+
+        #email {
+            margin-left: 45px;
+        }
+
+        #exp {
+            margin-left: 0px;
+        }
+
+        #remarks {
+            width: 500px;
+        }
+
+        #dep {
+            margin-left: 85px;
+        }
+
+        #additionalinformation {
+            width: 590px;
+            height: 60px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="form">
+        <img src="https://www.nyongesasande.com/wp-content/uploads/2022/06/Textile.jpg">
+        <div id="reg">
+            <h2 class="div">Supplier Shipment Form [BK-608]</h2>
+            <div class="flex">
+                <h3 class="div">Shipment Information</h4>
+                    <input type="date">
+            </div>
+            <p class="div">Please fill supply information carefully</p>
+
+            <!-- Name -->
+
+            <div class="div">
+                <label>Supplier Name</label>
+                <input type="text" id="suppliername">
+                <label id="ln">Supplier ID</label>
+                <input type="text" id="supplier">
+            </div>
+
+            <!-- Email -->
+
+            <div class="div">
+                <label>Email ID </label>
+                <input type="email" id="email">
+                <label id="pas">Password &nbsp;</label>
+                <input type="password" id="password">
+            </div>
+
+            <!-- gender -->
+
+            <div class="div">
+                <label>Supply Time &nbsp;&nbsp;</label>
+                <input type="checkbox">Immediatly
+                <input type="checkbox">within 3-7 Days
+            </div>
+
+            <!-- Grauatin & experions -->
+
+            <div class="div">
+                <label class="exp">Remarks &nbsp;</label>
+                <input type="text" id="remarks">
+            </div>
+
+
+            <div class="div">
+                <label>Material Type &nbsp;</label>
+                <select id="material">
+                    <option>Select Material</option>
+                    <option>Cotton</option>
+                    <option>Cellulosic</option>
+                    <option>fibres/viscose</option>
+                    <option>Wool</option>
+                    <option>Leather</option>
+                    <option>Bast fibres</option>
+                    <option>Experimental fabrics</option>
+                </select>
+
+                <label id="dep">Colors &nbsp;</label>
+                <select id="color">
+                    <option>Select Color</option>
+                    <option>lightskyblue</option>
+                    <option>Lightgray</option>
+                    <option>Red</option>
+                    <option>Black</option>
+                    <option>Blue</option>
+                    <option>Whie</option>
+                    <option>Green</option>
+                    <option>Beachgray</option>
+                </select>
+            </div>
+
+            <!-- additionalinformation -->
+
+            <div class="div">
+                <label>Additional Information</label>
+                <input type="text" id="additionalinformation">
+            </div>
+
+            <!-- agree condition -->
+
+            <div class="div" id="lab">
+                <input type="checkbox">Information provied above are correct.<br>
+                <input type="checkbox">I agree to all <span>Terms</span> & <span> Conditions</span>...
+            </div>
+
+            <!-- button -->
+
+            <button onclick="formValidation()">SUBMIT</button>
+        </div>
+    </div>
+    <script>
+        function formValidation() {
+
+            let suppliername = document.getElementById("suppliername").value;
+            let supplier = document.getElementById("supplier").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let remarks = document.getElementById("remarks").value;
+            let additionalinformation = document.getElementById("additionalinformation").value;
+
+            // suppliername & supplierid validation
+
+            if (isNaN(suppliername)) {
+                document.getElementById("suppliername").style.borderColor = "green";
+            }
+            else {
+                document.getElementById("suppliername").style.borderColor = "red";
+            }
+
+            if (!isNaN(supplier)) {
+                document.getElementById("supplier").style.borderColor = "green";
+            }
+            else {
+                document.getElementById("supplier").style.borderColor = "red";
+            }
+
+            //email&password validation
+
+            if ((email.includes('@') && email.includes('.')) && (email.includes('com') || email.includes('in'))) {
+                document.getElementById("email").style.borderColor = "green";
+            }
+            else {
+                document.getElementById("email").style.borderColor = "red";
+            }
+
+            if (isNaN(password)) {
+                document.getElementById("password").style.borderColor = "green";
+            }
+            else {
+                document.getElementById("password").style.borderColor = "red";
+            }
+
+            //remarks validations
+
+            if (isNaN(remarks)) {
+                document.getElementById("remarks").style.borderColor = "green";
+            }
+            else {
+                document.getElementById("remarks").style.borderColor = "red";
+            }
+
+            //additionalinformation validation
+
+            if (isNaN(additionalinformation)) {
+                document.getElementById("additionalinformation").style.borderColor = "green";
+            }
+            else {
+                document.getElementById("additionalinformation").style.borderColor = "red";
+            }
+
+            if (gender == "Gender") {
+                document.getElementById('gender').style.borderColor = "red";
+                errorCount++
+            }
+            else {
+                document.getElementById("gender").style.borderColor = "green";
+            }
+        }
+
+
+        let name = "barath"
+        let name2 = new String("barath")
+        let fullname = `my name is ${name},`;
+
+        console.log(name.replace("barath", "kaviya"))
+        console.log(fullname)
+
+        let players = [
+            {
+                playerid: 18,
+                game: "cricket",
+                playerName: "virat",
+                hunders: 546,
+            },
+            {
+                playerid: 10,
+                game: "cricket",
+                playerName: "sachin",
+                hunders: 687,
+                qualification: {
+                    mark8th: 395,
+                    mark10th: 456,
+                },
+            }
+        ]
+
+
+    </script>
+</body>
+
+</html>
