@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="Simpleform.css">
+    <style>
+        #DOB {
+        border: 1px solid black;
+        background: white;  
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form>
+            <div id="head">
+                <h3>Register-form</h3>  
+            </div>
+
+            <div class="data">
+                <input type="text"  id="firstname"  placeholder="First_Name" class="input">
+                <input type="text"  id="lastname"   placeholder="Last_Name"  class="input">
+            </div>
+
+            <div class="data">
+                <input type="number" id="phoneno" placeholder="Phone_No" class="input">
+                <input type="email"  id="email"   placeholder="Email_Id" class="input">
+            </div>
+
+            <diV class="data">
+                <label for="" class="input"> Date-Of-Birth</label>
+                <input type="date" id="DOB"  class="input"  placeholder="Choose date" value="" onChange="this.setAttribute('value', this.value)" > 
+            </diV>
+
+            <div class="data">
+                <label for="" class="input">Are you have Experience</label>
+                <label for="" id="radio-move1">
+                    <input onchange="selectyes()" type="radio" name="ExperHave" id="yes" value="yes" >
+                    <b>YES</b>
+                </label>
+                <label for="" id="radio-move2">
+                    <input onchange="selectno()" type="radio" name="ExperHave" id="no" value="no" >
+                    <b>NO</b>
+                </label>
+
+                <select id="experience" class="input">
+                    <option disabled selected hidden>How much experience you have</option>
+                </select>
+            </div>
+
+           <div class="data">
+              <select onchange="selectDegree()" id="degree" class="input">
+                <option disabled selected hidden>Qualification</option>
+                <option value="B.E">B.E</option>
+                <option value="BSc">BSc</option>
+                <option value="B.com">B.com</option>
+              </select>
+
+              <select  id="course" class="input">
+                <option disabled selected hidden>Please select course..</option>
+              </select>
+           </div>
+
+           <div class="data">
+              <input type="date" id="DOG" class="input" placeholder="Graduation Year" value="" onChange="this.setAttribute('value', this.value)">
+
+              <select id="gender" class="input">
+                <option disabled selected hidden>Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+              </select>
+           </div>
+
+           <div class="data">
+              <label class="input" id="techlabel">Technologies Known</label>
+              <label id="checkbox1">
+                <input type="checkbox" id="html" value="Html">
+                 <b>Html</b>
+              </label>
+              <label id="checkbox2">
+                <input type="checkbox" id="css" value="css">
+                <b>Css</b>
+              </label>
+              <label id="checkbox3">
+                <input type="checkbox" id="javascript" value="javascript">
+                <b>Javascript</b>
+              </label>
+              <label id="checkbox4">
+                <input type="checkbox" id="reactjs" value="ReactJs">
+                <b>ReactJs</b>
+              </label>
+           </div>
+           
+           <div class="data">
+               <select onchange="selectRole()" id="role" class="input">
+                <option disabled selected hidden>Role you Looking</option>
+                <option value="Devops Engineer">Devops Engineer</option>
+                <option value="Software Developer">Software Developer</option>
+                <option value="Tester">Tester</option>
+               </select> 
+
+               <select  id="salary" class="input">
+                <option disabled selected hidden>Esitmated Salary</option>
+               </select>
+           </div>
+        </form>
+              <button onclick="Regfunction()" id="reg-btn">Register</button>
+  </div>
+     
+    <script src="Simpleform.js"></script>
+</body>
+</html>
